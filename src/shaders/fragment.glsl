@@ -7,6 +7,7 @@ uniform sampler2D uTexture;
 uniform vec2 uTextureResolution;
 
 uniform float uSpeed;
+uniform float uCursorIntensity;
 uniform float uBlocks;
 
 //get right aspect ratio
@@ -52,8 +53,8 @@ void main()
     uv = getAspectRatio(uv, surfaceRatio, textureRatio);
 
     vec2 distortion = 0.1 * vec2(
-        sin(time*0.3 + block.x*5.0 + block.y*2.0 + uCursor.x*2.0+uCursor.y*0.6), 
-        cos(time*0.2 + block.x*5.5 + block.y*2.5 + uCursor.x*0.5+uCursor.y*1.5)
+        sin(time*0.3 + block.x*5.0 + block.y*2.0 + (uCursor.x*2.0+uCursor.y*0.6)*uCursorIntensity), 
+        cos(time*0.2 + block.x*5.5 + block.y*2.5 + (uCursor.x*0.5+uCursor.y*1.5)*uCursorIntensity)
         );
 
     //add color

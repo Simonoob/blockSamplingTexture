@@ -32,11 +32,12 @@ export default class ShaderPlane {
 				uCursorEnter: { value: false },
 				uCursorLeave: { value: false },
 				uSpeed: { value: 1 },
-				uTexture: { value: this.resources.items.guyProfileTexture },
+				uCursorIntensity: { value: 1 },
+				uTexture: { value: this.resources.items.paintTexture },
 				uTextureResolution: {
 					value: {
-						x: this.resources.items.guyProfileTexture.image.width,
-						y: this.resources.items.guyProfileTexture.image.height,
+						x: this.resources.items.paintTexture.image.width,
+						y: this.resources.items.paintTexture.image.height,
 					},
 				},
 				uBlocks: { value: 12 },
@@ -65,6 +66,14 @@ export default class ShaderPlane {
 						text: 'Beautiful Doggo',
 						value: this.resources.items.doggoTexture,
 					},
+					{
+						text: 'Hills',
+						value: this.resources.items.hillsTexture,
+					},
+					{
+						text: 'Paint',
+						value: this.resources.items.paintTexture,
+					},
 				],
 				label: 'Texture',
 			})
@@ -77,17 +86,26 @@ export default class ShaderPlane {
 			})
 
 		this.debugFolder.addInput(this.material.uniforms.uSpeed, 'value', {
-			step: 0.1,
 			min: 0,
 			max: 10,
-			label: 'Speed',
+			label: 'Distortion Speed',
 		})
+
+		this.debugFolder.addInput(
+			this.material.uniforms.uCursorIntensity,
+			'value',
+			{
+				min: 0,
+				max: 10,
+				label: 'Cursor Distortion Intensity',
+			},
+		)
 
 		this.debugFolder.addInput(this.material.uniforms.uBlocks, 'value', {
 			step: 1,
 			min: 1,
 			max: 50,
-			label: 'Squares',
+			label: 'Sampling block (per side)',
 		})
 	}
 

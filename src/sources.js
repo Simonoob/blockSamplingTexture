@@ -31,4 +31,14 @@ export default [
 		type: 'texture',
 		path: 'textures/doggo.jpeg',
 	},
+	{
+		name: 'hillsTexture',
+		type: 'texture',
+		path: 'textures/hills.jpg',
+	},
+	{
+		name: 'paintTexture',
+		type: 'texture',
+		path: 'textures/paint.jpg',
+	},
 ]
