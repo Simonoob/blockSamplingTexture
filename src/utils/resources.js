@@ -51,7 +51,7 @@ export default class Resources extends EventEmitter {
 		this.progress = (this.loaded / this.toLoad) * 100
 		document.querySelector(
 			'#loader_value',
-		).textContent = `${this.progress}%`
+		).textContent = `${this.progress.toFixed(2)}%`
 
 		if (this.loaded === this.toLoad) {
 			document.querySelector('#loader').classList.add('loader_disabled')
