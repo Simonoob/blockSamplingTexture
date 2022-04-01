@@ -12,20 +12,17 @@ export default class World {
 		this.resources = this.experience.resources
 
 		//wait for resources
-		this.resources.on('resources_ready', () => {
-			// this.floor = new Floor()
-			// this.environment = new Environment()
-			this.ShaderPlane = new ShaderPlane()
-			this.cursor = new Cursor()
+		// this.floor = new Floor()
+		// this.environment = new Environment()
+		this.ShaderPlane = new ShaderPlane()
 
-			this.scene.background = this.resources.items.environmentMapTexture
-		})
+		this.scene.background = this.resources.items.environmentMapTexture
 	}
 
 	update() {
 		if (this.ShaderPlane) {
 			this.ShaderPlane.update()
-			this.cursor.update()
+			!this.cursor ? (this.cursor = new Cursor()) : this.cursor.update()
 		}
 	}
 }
