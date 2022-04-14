@@ -50,7 +50,7 @@ void main()
     );
 
     //Correct aspect ratio for Texture rendeding
-    uv = getAspectRatio(uv, surfaceRatio, textureRatio);
+    // uv = getAspectRatio(uv, surfaceRatio, textureRatio);
 
     vec2 distortion = 0.1 * vec2(
         sin(time*0.3 + block.x*5.0 + block.y*2.0 + (uCursor.x*2.0+uCursor.y*0.6)*uCursorIntensity), 
@@ -58,7 +58,9 @@ void main()
         );
 
     //add color
-    vec4 textureColor = texture2D(uTexture, uv + distortion);
+    vec4 textureColor = texture2D(uTexture, uv 
+    // + distortion
+    );
 
     gl_FragColor = textureColor;
 

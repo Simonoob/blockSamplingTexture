@@ -9,5 +9,6 @@ export default class Debug {
 		this.ui = new Pane({
 			title: 'Config',
 		})
+        if (window.location.hash !== '#debug') this.ui.dispose()
 	}
 }
