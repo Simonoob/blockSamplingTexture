@@ -59,6 +59,10 @@ export default class ShaderPlane {
 				view: 'list',
 				options: [
 					{
+						text: 'Paint',
+						value: this.resources.items.paintTexture,
+					},
+					{
 						text: 'Guy Profile',
 						value: this.resources.items.guyProfileTexture,
 					},
@@ -69,10 +73,6 @@ export default class ShaderPlane {
 					{
 						text: 'Hills',
 						value: this.resources.items.hillsTexture,
-					},
-					{
-						text: 'Paint',
-						value: this.resources.items.paintTexture,
 					},
 				],
 				label: 'Texture',
